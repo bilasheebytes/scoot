@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr calc(100% - rem(64)) 1fr;
+
+  @include breakpoint-up(medium) {
+    grid-template-columns: 1fr min(calc(100% - rem(80)), rem(1110)) 1fr;
+  }
+
+  > * {
+    grid-column: 2;
+  }
+
+  > .fullbleed {
+    grid-column: 1 / -1;
+  }
+}

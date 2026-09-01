@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+.button {
+  display: block;
+  width: fit-content;
+  padding: rem(12) rem(38);
+  font-family: $font-mono;
+  color: $navy;
+  background: $yellow;
+  border: 3px solid $yellow;
+  transition: 150ms ease-in-out;
+  transition-property: color, border-color, background-color;
+
+  &:hover {
+    background: transparent;
+    border: 3px solid $navy;
+  }
+}

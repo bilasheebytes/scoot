@@ -1,0 +1,146 @@
+@use "../abstracts/" as *;
+
+.header {
+  align-items: center;
+  padding-block: rem(20);
+
+  &__logo,
+  &__nav {
+    grid-row: 1;
+  }
+
+  &__logo {
+    justify-self: center;
+    width: rem(75);
+    z-index: 12;
+
+    @include breakpoint-up(medium) {
+      justify-self: start;
+      width: rem(94);
+    }
+  }
+
+  &__nav {
+    display: grid;
+    align-items: center;
+    justify-self: start;
+    z-index: 10;
+
+    @include breakpoint-up(medium) {
+      padding-inline-start: rem(167);
+      width: 100%;
+    }
+
+    &::before {
+      content: "";
+      position: fixed;
+      inset: rem(64) 0 0 0;
+      opacity: 0;
+      pointer-events: none;
+      background: $light-black;
+      transition: opacity 300ms ease-in-out;
+    }
+
+    &:has(.header__open[aria-expanded="true"])::before {
+      opacity: 1;
+    }
+
+    button {
+      translate: 0 2px;
+      background: none;
+      border: none;
+      padding: 0;
+
+      @include breakpoint-up(medium) {
+        display: none;
+      }
+    }
+  }
+
+  &__open[aria-expanded="true"] {
+    display: none;
+
+    + .header__menu .header__content {
+      opacity: 1;
+      translate: 0;
+
+      @media (prefers-reduced-motion) {
+        opacity: 1;
+      }
+    }
+
+    + .header__content::before {
+      opacity: 1;
+    }
+
+    + .header__menu .header__close {
+      display: block;
+    }
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    top: rem(18);
+    margin-inline-start: auto;
+    margin-block-end: rem(128);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint-down(small) {
+      position: fixed;
+      inset: rem(64) rem(120) 0 0;
+      padding: rem(64) rem(32) rem(24);
+      flex-direction: column;
+      background: $navy;
+      opacity: 0;
+      translate: -100vw 0;
+      transition: translate 300ms ease-in-out;
+      transition-property: opacity;
+
+      @media (prefers-reduced-motion) {
+        opacity: 0;
+        translate: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+
+    @include breakpoint-down(small) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__link {
+    font-family: $font-mono;
+    font-weight: 700;
+    color: $light-grey;
+    transition: color 150ms ease-in-out;
+
+    @include breakpoint-up(medium) {
+      color: $dim-grey;
+    }
+
+    &:hover {
+      color: $dark-navy;
+    }
+  }
+
+  &__button {
+    @include breakpoint-down(small) {
+      &:hover {
+        color: $white;
+        border: 3px solid $white;
+      }
+    }
+  }
+}
