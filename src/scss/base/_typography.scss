@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+h1 {
+  font-size: $font-xl;
+  letter-spacing: -1.79px;
+
+  @include breakpoint-up(medium) {
+    font-size: $font-3xl;
+    letter-spacing: -2.5px;
+  }
+}
+
+h2 {
+  font-size: $font-lg;
+  letter-spacing: -1.43px;
+
+  @include breakpoint-up(medium) {
+    font-size: $font-2xl;
+    letter-spacing: -2.14px;
+  }
+}
+
+h3 {
+  font-size: $font-sm;
+  letter-spacing: -0.89px;
+
+  @include breakpoint-up(medium) {
+    font-size: $font-md;
+    letter-spacing: -1.07px;
+  }
+}

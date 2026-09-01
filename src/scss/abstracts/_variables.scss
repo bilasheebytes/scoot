@@ -1,0 +1,23 @@
+@use "functions" as *;
+
+// Colors
+$white: hsl(0, 0%, 100%);
+$snow: hsl(214, 37%, 96%);
+$navy: hsl(215, 14%, 23%);
+$yellow: hsl(40, 97%, 58%);
+$dim-grey: hsl(217, 12%, 62%);
+$dark-navy: hsl(216, 17%, 35%);
+$light-grey: hsl(212, 41%, 93%);
+$light-yellow: hsl(39, 100%, 94%);
+$light-black: hsla(0, 0%, 0%, 0.75);
+
+// Fonts
+$font-mono: "Space Mono", monospace;
+$font-sans: "Lexend Deca", sans-serif;
+$font-3xl: rem(56);
+$font-2xl: rem(48);
+$font-xl: rem(40);
+$font-lg: rem(32);
+$font-md: rem(24);
+$font-sm: rem(20);
+$font-base: rem(15);
