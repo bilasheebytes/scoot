@@ -1,0 +1,98 @@
+@use "../../abstracts/" as *;
+
+.hero {
+  overflow-x: clip;
+
+  > * {
+    grid-row: 1;
+  }
+
+  &__picture {
+    max-height: 100vh;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+    color: $white;
+    text-align: center;
+    translate: 0 rem(-24);
+
+    @include breakpoint-up(medium) {
+      max-width: 55ch;
+    }
+
+    @include breakpoint-up(large) {
+      justify-self: start;
+      justify-items: start;
+      text-align: left;
+      max-width: 57ch;
+      translate: 0;
+    }
+
+    p,
+    .button {
+      @include breakpoint-up(large) {
+        margin-inline-start: rem(95);
+      }
+    }
+
+    p {
+      margin-block: rem(24) rem(32);
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include breakpoint-up(large) {
+      display: block;
+      align-self: center;
+      translate: rem(-140) rem(30);
+    }
+  }
+
+  &__arrow {
+    grid-column: 1 / -1;
+    justify-self: start;
+    align-self: end;
+    translate: rem(-264) rem(-34);
+
+    @include breakpoint-up(medium) {
+      translate: rem(-130) rem(-34);
+    }
+
+    @include breakpoint-up(large) {
+      grid-column: 2;
+      align-self: center;
+      translate: rem(530) rem(100);
+    }
+  }
+
+  &__circles {
+    display: none;
+
+    @include breakpoint-up(medium) {
+      display: block;
+      align-self: end;
+      justify-self: end;
+      translate: rem(30) rem(-45);
+    }
+
+    @include breakpoint-up(large) {
+      display: none;
+    }
+
+    @include breakpoint-up(x-large) {
+      display: block;
+      align-self: center;
+      translate: rem(30) rem(130);
+    }
+  }
+}

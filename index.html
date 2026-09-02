@@ -58,7 +58,61 @@
         </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section class="hero wrapper">
+        <picture class="hero__picture fullbleed">
+          <source
+            media="(width >= 68.75em)"
+            srcset="/src/assets/images/home-hero-desktop.jpg"
+            width="1440"
+            height="650"
+          />
+          <source
+            media="(width >= 43.75em)"
+            srcset="/src/assets/images/home-hero-tablet.jpg"
+            width="768"
+            height="650"
+          />
+          <img
+            class="hero__image"
+            src="/src/assets/images/home-hero-mobile.jpg"
+            alt="man riding yellow scooter on bridge"
+            width="375"
+            height="650"
+          />
+        </picture>
+        <div class="hero__content">
+          <h1>Scooter sharing made simple</h1>
+          <p>
+            Scoot takes the hassle out of urban mobility. Our bikes are placed
+            in convenient locations in each of our cities. Use our app to locate
+            the nearest bike, unlock it with a tap, and you’re away!
+          </p>
+          <a href="" class="button white">Get Scootin</a>
+        </div>
+        <img
+          class="hero__line"
+          src="/src/assets/patterns/line.svg"
+          alt=""
+          width="203"
+          height="15"
+        />
+        <img
+          class="hero__arrow"
+          src="/src/assets/patterns/right-arrow.svg"
+          alt=""
+          width="452"
+          height="151"
+        />
+        <img
+          class="hero__circles fullbleed"
+          src="/src/assets/patterns/white-circles.svg"
+          alt=""
+          width="234"
+          height="63"
+        />
+      </section>
+    </main>
     <script type="module" src="/src/js/script.js"></script>
   </body>
 </html>

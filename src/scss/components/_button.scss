@@ -15,4 +15,10 @@
     background: transparent;
     border: 3px solid $navy;
   }
+
+  &.white:hover {
+    color: $white;
+    background: transparent;
+    border: 3px solid $white;
+  }
 }

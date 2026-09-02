@@ -34,7 +34,7 @@
     &::before {
       content: "";
       position: fixed;
-      inset: rem(64) 0 0 0;
+      inset: rem(60) 0 0 0;
       opacity: 0;
       pointer-events: none;
       background: $light-black;
@@ -92,7 +92,7 @@
 
     @include breakpoint-down(small) {
       position: fixed;
-      inset: rem(64) rem(120) 0 0;
+      inset: rem(60) rem(120) 0 0;
       padding: rem(64) rem(32) rem(24);
       flex-direction: column;
       background: $navy;
