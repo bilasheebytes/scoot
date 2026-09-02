@@ -9,6 +9,7 @@
 
   &__picture {
     max-height: 100vh;
+    overflow: clip;
   }
 
   &__image {

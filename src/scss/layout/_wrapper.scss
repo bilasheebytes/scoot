@@ -8,6 +8,12 @@
     grid-template-columns: 1fr min(calc(100% - rem(80)), rem(1110)) 1fr;
   }
 
+  &.small {
+    @include breakpoint-both(medium) {
+      grid-template-columns: 1fr min(calc(100% - rem(200)), rem(1110)) 1fr;
+    }
+  }
+
   > * {
     grid-column: 2;
   }
