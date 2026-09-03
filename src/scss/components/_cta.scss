@@ -1,0 +1,66 @@
+@use "../abstracts/" as *;
+
+.cta {
+  color: $white;
+  text-align: center;
+  justify-items: center;
+  background-color: $dark-navy;
+  background-image: url("/src/assets/patterns/semi-circles.svg");
+  background-repeat: no-repeat;
+  background-size: 320%;
+  background-position: 75% 100%;
+
+  @include breakpoint-up(medium) {
+    background-size: 160%;
+    background-position: 50% 110%;
+  }
+
+  @include breakpoint-up(large) {
+    text-align: start;
+    justify-items: stretch;
+    background-size: 82%;
+    background-position: 170% 110%;
+  }
+
+  &__content {
+    display: grid;
+    row-gap: rem(40);
+    padding-block: rem(88);
+
+    @include breakpoint-up(medium) {
+      padding-block: rem(62);
+    }
+
+    @include breakpoint-up(large) {
+      align-items: center;
+      padding-block: rem(100);
+    }
+  }
+
+  &__title {
+    max-width: 15ch;
+
+    @include breakpoint-up(large) {
+      grid-row: 1 / span 1;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: rem(16);
+
+    @include breakpoint-up(large) {
+      grid-row: 1 / span 1;
+      justify-self: end;
+    }
+
+    :first-child {
+      text-align: end;
+    }
+
+    :last-child {
+      text-align: start;
+    }
+  }
+}
