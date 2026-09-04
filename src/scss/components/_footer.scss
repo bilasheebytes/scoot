@@ -1,0 +1,81 @@
+@use "../abstracts/" as *;
+
+.footer {
+  color: $white;
+  background: $navy;
+  padding-block: rem(64) rem(88);
+
+  @include breakpoint-up(medium) {
+    padding-block: rem(32);
+  }
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: auto auto 1fr;
+    }
+  }
+
+  &__logo {
+    width: rem(75);
+
+    @include breakpoint-up(medium) {
+      width: rem(94);
+    }
+  }
+
+  &__nav {
+    margin-block: rem(40) rem(85);
+
+    @include breakpoint-up(medium) {
+      margin: 0 0 0 rem(60);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      gap: rem(32);
+    }
+  }
+
+  &__link {
+    font-family: $font-mono;
+    font-weight: 700;
+    color: $dim-grey;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  &__socials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: rem(24);
+
+    @include breakpoint-up(medium) {
+      justify-self: end;
+    }
+
+    a {
+      path {
+        transition: fill 150ms ease-in-out;
+      }
+
+      &:hover path {
+        fill: $white;
+      }
+    }
+  }
+}
