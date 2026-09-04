@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+    <link rel="stylesheet" href="/src/scss/styles.scss" />
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+    <title>About</title>
+  </head>
+  <body>
+    <header class="header wrapper">
+      <a class="header__logo" href="/">
+        <img
+          src="/src/assets/icons/logo.svg"
+          alt="scoot"
+          width="108"
+          height="29"
+        />
+      </a>
+      <nav class="header__nav">
+        <span id="nav-label" hidden>Navigation</span>
+        <button
+          class="header__open"
+          aria-expanded="false"
+          aria-labelledby="nav-label"
+        >
+          <img
+            src="/src/assets/icons/hamburger.svg"
+            alt=""
+            width="20"
+            height="16"
+          />
+        </button>
+        <div class="header__menu" role="dialog" aria-labelledby="nav-label">
+          <button class="header__close" aria-label="Close">
+            <img
+              src="/src/assets/icons/close.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+          </button>
+          <div class="header__content">
+            <ul class="header__links">
+              <li>
+                <a href="/about" class="header__link">About</a>
+              </li>
+              <li>
+                <a href="/location" class="header__link">Location</a>
+              </li>
+              <li>
+                <a href="/careers" class="header__link">Careers</a>
+              </li>
+            </ul>
+            <a href="" class="header__button button">Get Scootin</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="banner wrapper">
+        <picture class="banner__picture fullbleed">
+          <source
+            media="(width >= 68.75em)"
+            srcset="/src/assets/images/about-hero-desktop.jpg"
+            width="1440"
+            height="200"
+          />
+          <source
+            media="(width >= 43.75em)"
+            srcset="/src/assets/images/about-hero-tablet.jpg"
+            width="768"
+            height="200"
+          />
+          <img
+            class="banner__image"
+            src="/src/assets/images/about-hero-mobile.jpg"
+            alt="aerial view of city street intersection with road markings and vehicles"
+            width="375"
+            height="160"
+          />
+        </picture>
+        <h1 class="banner__title">About</h1>
+        <img
+          class="banner__circles fullbleed"
+          src="/src/assets/patterns/white-circles.svg"
+          alt=""
+          width="234"
+          height="63"
+          aria-hidden="true"
+        />
+      </section>
+    </main>
+    <script type="module" src="/src/js/script.js"></script>
+  </body>
+</html>
