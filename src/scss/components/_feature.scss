@@ -5,6 +5,10 @@
   row-gap: rem(120);
   padding-block-end: rem(120);
 
+  &--py {
+    padding-block: rem(120);
+  }
+
   @include breakpoint-up(large) {
     row-gap: rem(160);
   }
