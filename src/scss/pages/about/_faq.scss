@@ -1,0 +1,100 @@
+@use "../../abstracts" as *;
+
+.faq {
+  color: $dark-navy;
+  margin-block: rem(80) rem(120);
+
+  @include breakpoint-up(large) {
+    margin-block: rem(20) rem(160);
+  }
+
+  &__headline {
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(32);
+    margin-block-start: rem(52);
+
+    @include breakpoint-up(medium) {
+      margin-block-start: rem(64);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: rem(350) 1fr;
+    }
+  }
+
+  &__title {
+    font-size: $font-md;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      font-size: $font-xl;
+    }
+  }
+
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+
+    &__item.is-open {
+      .accordion__icon {
+        transform: rotate(180deg);
+      }
+
+      .accordion__panel {
+        max-height: rem(224);
+        opacity: 1;
+      }
+    }
+
+    &__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      padding: rem(28) rem(32);
+      font-family: inherit;
+      font-size: $font-sm;
+      font-weight: 700;
+      color: $dark-navy;
+      text-align: left;
+      letter-spacing: -0.89px;
+      background: $snow;
+      transition: background 200ms ease-in-out;
+
+      @include breakpoint-up(medium) {
+        font-size: $font-md;
+        letter-spacing: -1.07px;
+      }
+
+      &:hover {
+        background: $light-cream;
+      }
+    }
+
+    &__icon {
+      transition: transform 300ms ease-in-out;
+    }
+
+    &__panel {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition:
+        max-height 300ms ease-in-out,
+        opacity 300ms ease-in-out;
+    }
+
+    &__content {
+      padding: rem(28) rem(32);
+      background: $snow;
+    }
+  }
+}

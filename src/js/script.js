@@ -54,3 +54,44 @@ links.forEach((link) => {
     e.preventDefault();
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const triggers = Array.from(document.querySelectorAll(".accordion__trigger"));
+  if (!triggers.length) return;
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+      const accordionItem = trigger.closest(".accordion__item");
+
+      trigger.setAttribute("aria-expanded", !isExpanded);
+      if (accordionItem) {
+        accordionItem.classList.toggle("is-open");
+      }
+    });
+
+    // keyboard navigation
+    trigger.addEventListener("keydown", (event) => {
+      const index = triggers.indexOf(trigger);
+
+      switch (event.key) {
+        case "ArrowDown":
+          event.preventDefault();
+          triggers[(index + 1) % triggers.length].focus();
+          break;
+        case "ArrowUp":
+          event.preventDefault();
+          triggers[(index - 1 + triggers.length) % triggers.length].focus();
+          break;
+        case "Home":
+          event.preventDefault();
+          triggers[0].focus();
+          break;
+        case "End":
+          event.preventDefault();
+          triggers[triggers.length - 1].focus();
+          break;
+      }
+    });
+  });
+});
