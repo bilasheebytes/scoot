@@ -1,0 +1,83 @@
+@use "../../abstracts" as *;
+
+.map {
+  margin-block: rem(72);
+
+  @include breakpoint-up(medium) {
+    margin-block: rem(120);
+  }
+
+  &__picture {
+    margin-block-end: rem(42);
+
+    @include breakpoint-up(medium) {
+      margin-block-end: rem(64);
+    }
+  }
+
+  &__image {
+    margin-inline: auto;
+  }
+
+  &__cities {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(18);
+    margin-block-end: rem(48);
+
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+  }
+
+  &__city {
+    display: grid;
+    place-items: center;
+    height: rem(72);
+    font-family: $font-mono;
+    font-size: $font-md;
+    font-weight: 700;
+    color: $dark-navy;
+    letter-spacing: -1.07px;
+    background: $light-cream;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: rem(34);
+
+    @include breakpoint-up(large) {
+      grid-template-columns: rem(322) rem(445) rem(225);
+      justify-content: space-between;
+      align-items: start;
+      text-align: left;
+      gap: 0;
+    }
+
+    h2 {
+      font-size: $font-xl;
+      color: $dark-navy;
+
+      @include breakpoint-up(medium) {
+        font-size: $font-2xl;
+      }
+    }
+
+    p {
+      max-width: 60ch;
+      text-wrap: wrap;
+      color: $dim-grey;
+    }
+
+    .button {
+      justify-self: center;
+
+      @include breakpoint-up(large) {
+        justify-self: end;
+      }
+    }
+  }
+}

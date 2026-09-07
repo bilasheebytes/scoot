@@ -91,6 +91,44 @@
           aria-hidden="true"
         />
       </section>
+      <section class="map wrapper">
+        <picture class="map__picture">
+          <source
+            media="(width >= 68.75em)"
+            srcset="/src/assets/images/world-map-desktop.png"
+            width="1110"
+            height="543"
+          />
+          <source
+            media="(width >= 43.75em)"
+            srcset="/src/assets/images/world-map-tablet.png"
+            width="689"
+            height="337"
+          />
+          <img
+            class="map__image"
+            src="/src/assets/images/world-map-mobile.png"
+            alt="light blue world map silhouette against a dark background"
+            width="622"
+            height="304"
+          />
+        </picture>
+        <ul class="map__cities">
+          <li class="map__city">New York</li>
+          <li class="map__city">London</li>
+          <li class="map__city">Jakarta</li>
+          <li class="map__city">Yokohama</li>
+        </ul>
+        <div class="map__content">
+          <h2>Your City Not Listed?</h2>
+          <p>
+            If you'd like to see Scoot in your hometown, be sure to let us know.
+            We track requests and plan launches based on demand. Feel free to
+            message us by clicking the link or messaging us on social.
+          </p>
+          <a href="" class="button">Message Us</a>
+        </div>
+      </section>
     </main>
     <script type="module" src="/src/js/script.js"></script>
   </body>
