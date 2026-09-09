@@ -1,0 +1,38 @@
+@use "../../abstracts" as *;
+
+.job {
+  margin-block: rem(16) rem(72);
+
+  @include breakpoint-up(medium) {
+    margin-block: rem(16) rem(120);
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(32) rem(64) rem(32) rem(40);
+    text-align: center;
+    color: $dark-navy;
+    background: $snow;
+
+    &:not(:last-child) {
+      margin-block-end: rem(28);
+    }
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      align-items: start;
+      text-align: left;
+    }
+
+    p {
+      margin-block: rem(12) rem(16);
+
+      @include breakpoint-up(medium) {
+        margin-block: 0;
+      }
+    }
+  }
+}
