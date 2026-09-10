@@ -1,5 +1,6 @@
 const body = document.querySelector("body");
 const main = document.querySelector("main");
+const links = document.querySelectorAll("a[href='#']");
 const media = window.matchMedia("(width < 43.75em)");
 const openButton = document.querySelector(".header__open");
 const closeButton = document.querySelector(".header__close");
@@ -46,4 +47,10 @@ closeButton.addEventListener("click", closeMobileMenu);
 
 media.addEventListener("change", function (e) {
   setupHeader(e);
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
 });
